@@ -79,7 +79,7 @@ class Ct_admin_extender_ext
 		return $report;
 	}
 	
-	public function ct_admin_order_view($order_details)
+	public function ct_admin_order_view(array $order_details)
 	{
 		$view = $this->EE->extensions->last_call;
 		$vars = array();
@@ -88,7 +88,7 @@ class Ct_admin_extender_ext
 		return $view;
 	}
 	
-	public function ct_admin_order_view_secondary($order_details)
+	public function ct_admin_order_view_secondary(array $order_details)
 	{
 		$view = $this->EE->extensions->last_call;
 		$vars = array();
@@ -98,7 +98,7 @@ class Ct_admin_extender_ext
 	}
 	
 	
-	public function ct_admin_order_view_tertiary($order_details)
+	public function ct_admin_order_view_tertiary(array $order_details)
 	{
 		$view = $this->EE->extensions->last_call;
 		$vars = array();
@@ -108,7 +108,7 @@ class Ct_admin_extender_ext
 	}
 	
 	
-	public function ct_admin_order_view2($order_details)
+	public function ct_admin_order_view2(array $order_details)
 	{
 		$view = $this->EE->extensions->last_call;
 		$vars = array();
@@ -117,7 +117,7 @@ class Ct_admin_extender_ext
 		return $view;
 	}
 	
-	public function ct_admin_order_menu_modify($menu)
+	public function ct_admin_order_menu_modify(array $menu)
 	{
 		$menu[lang('my_order_page')] = array('target' => '_self', 'url' => $this->url_base.'order_thing'.AMP.'order_id='.$this->EE->input->get('id'));
 		return $menu;
@@ -129,22 +129,22 @@ class Ct_admin_extender_ext
 		return $menu;
 	}
 	
-	public function ct_admin_modify_order_details_block($block, $order_data)
+	public function ct_admin_modify_order_details_block($block, array $order_data)
 	{
-		$block['devotee_license_key'] = $order_data['devotee_license_key'];
-		$block['devotee_payment_id'] = $order_data['devotee_payment_id'];
+		$block['devotee_license_key'] = 'devotee_license_key';
+		$block['devotee_payment_id'] = 'devotee_payment_id';
 		unset($block['order_shipping_option']);
 		unset($block['order_shipping']);
 		return $block;
 	}
 	
-	public function ct_admin_customer_menu_modify($menu, $customer_data)
+	public function ct_admin_customer_menu_modify(array $menu, array $customer_data)
 	{
 		$menu[lang('my_customer_page')] = array('target' => '_self', 'url' => $this->url_base.'customer_page'.AMP.'email='.$this->EE->input->get('email'));
 		return $menu;
 	}
 	
-	public function ct_admin_customer_view($customer_details)
+	public function ct_admin_customer_view(array $customer_details)
 	{
 		$view = $this->EE->extensions->last_call;
 		$vars = array();
@@ -153,7 +153,7 @@ class Ct_admin_extender_ext
 		return $view;
 	}
 	
-	public function ct_admin_customer_view_secondary($customer_details)
+	public function ct_admin_customer_view_secondary(array $customer_details)
 	{
 		$view = $this->EE->extensions->last_call;
 		$vars = array();
@@ -163,7 +163,7 @@ class Ct_admin_extender_ext
 	}
 	
 	
-	public function ct_admin_customer_view_tertiary($customer_details)
+	public function ct_admin_customer_view_tertiary(array $customer_details)
 	{
 		$view = $this->EE->extensions->last_call;
 		$vars = array();
@@ -172,7 +172,7 @@ class Ct_admin_extender_ext
 		return $view;
 	}
 	
-	public function ct_admin_history_report_view($customer_details)
+	public function ct_admin_history_report_view(array $customer_details)
 	{
 		$view = $this->EE->extensions->last_call;
 		$vars = array();
@@ -181,7 +181,7 @@ class Ct_admin_extender_ext
 		return $view;
 	}
 	
-	public function ct_admin_history_report_secondary_view($customer_details)
+	public function ct_admin_history_report_secondary_view(array $customer_details)
 	{
 		$view = $this->EE->extensions->last_call;
 		$vars = array();
@@ -191,7 +191,7 @@ class Ct_admin_extender_ext
 	}
 	
 	
-	public function ct_admin_history_report_tertiary_view($customer_details)
+	public function ct_admin_history_report_tertiary_view(array $customer_details)
 	{
 		$view = $this->EE->extensions->last_call;
 		$vars = array();
