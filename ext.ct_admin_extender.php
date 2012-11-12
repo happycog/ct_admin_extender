@@ -190,7 +190,6 @@ class Ct_admin_extender_ext
 		return $view;
 	}
 	
-	
 	public function ct_admin_history_report_tertiary_view(array $customer_details)
 	{
 		$view = $this->EE->extensions->last_call;
@@ -198,7 +197,13 @@ class Ct_admin_extender_ext
 		$vars['customer_details'] = $customer_details;
 		$view .= $this->EE->load->view('ct_admin_history_report_view_tertiary', $vars, TRUE);
 		return $view;
-	}	
+	}
+
+	public function ct_admin_modify_order_items($order_items)
+	{
+		$order_items = ($this->EE->extensions->last_call != '' ? $this->EE->extensions->last_call : $order_items);
+		return $order_items;
+	}
 	
 	public function activate_extension() 
 	{

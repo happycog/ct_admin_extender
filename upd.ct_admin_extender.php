@@ -30,7 +30,7 @@ class Ct_admin_extender_upd
     	array('method' => 'ct_admin_report', 'hook' => 'ct_admin_custom_reports'),
     	array('method' => 'ct_admin_order_menu_modify', 'hook' => 'ct_admin_modify_order_menu'),
     	array('method' => 'ct_admin_main_menu_modify', 'hook' => 'ct_admin_modify_main_menu'),
-    		
+    	array('method' => 'ct_admin_modify_order_items', 'hook' => 'ct_admin_modify_order_items'),
     	array('method' => 'ct_admin_order_view', 'hook' => 'ct_admin_order_view'),
     	array('method' => 'ct_admin_order_view_secondary', 'hook' => 'ct_admin_order_secondary_view'),
     	array('method' => 'ct_admin_order_view_tertiary', 'hook' => 'ct_admin_order_tertiary_view'),
