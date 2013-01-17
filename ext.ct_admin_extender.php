@@ -45,6 +45,10 @@ class Ct_admin_extender_ext
 	
 	public $required_by = array('module');
 	
+
+	public $url_base = '';
+	public $query_base = '';
+	
 	/**
 	 * The name of the module; used for links and whatnots
 	 * @var string
@@ -67,9 +71,13 @@ class Ct_admin_extender_ext
 		
 
 		$this->query_base = 'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module='.$this->mod_name.AMP.'method=';
-		$this->url_base = BASE.AMP.$this->query_base;
-		$this->EE->cp->set_variable('url_base', $this->url_base);
-		$this->EE->cp->set_variable('query_base', $this->query_base);		
+		
+		if(defined('BASE'))
+		{
+			$this->url_base = BASE.AMP.$this->query_base;
+			$this->EE->cp->set_variable('url_base', $this->url_base);
+			$this->EE->cp->set_variable('query_base', $this->query_base);	
+		}	
 	}
 
 	public function ct_admin_report($report)
